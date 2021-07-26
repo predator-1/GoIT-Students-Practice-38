@@ -45,5 +45,5 @@
 // console.log('undefined === null');
 // console.log(undefined === null);
 
-// console.log('"200" < "120"');
-// console.log('200' < '120');
+console.log('"200" < "120"');
+console.log('200' < '120');

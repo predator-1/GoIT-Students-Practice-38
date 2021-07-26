@@ -29,10 +29,10 @@
 // console.log('let quantity;');
 // console.log(typeof quantity);
 
-// function getPI() {
-//   return Math.PI;
-// }
-// console.log(`function getPI() {
-//     return Math.PI;
-// }`);
-// console.log(typeof getPI);
+function getPI() {
+  return Math.PI;
+}
+console.log(`function getPI() {
+    return Math.PI;
+}`);
+console.log(typeof getPI);
