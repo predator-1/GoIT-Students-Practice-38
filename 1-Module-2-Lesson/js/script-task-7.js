@@ -8,3 +8,16 @@
 // Операция ввода числа продолжается до тех пор, пока пользователь не нажмет кнопку Cancel в prompt.
 // После того как пользователь прекратил ввод нажав кнопку Cancel, показать
 //                                   alert со строкой 'Общая сумма чисел равна [сумма]'.
+
+let total = 0;
+let result = 0;
+
+while (result != null) {
+  result = prompt('Enter a number');
+  let resultNum = Number(result);
+  if (!isNaN(resultNum)) {
+    total += resultNum;
+  }
+}
+
+alert(`Total sum ${total}`);
