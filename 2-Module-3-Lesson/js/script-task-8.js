@@ -1,0 +1,3 @@
+/**
+ * Array-like object arguments
+ */
