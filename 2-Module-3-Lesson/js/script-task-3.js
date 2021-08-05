@@ -7,3 +7,15 @@
  */
 
 const styles = ['Jazz', 'Blues'];
+
+styles.push('Rock');
+
+// styles[Math.floor(styles.length / 2)] = 'Classic';
+// styles[parseInt(styles.length / 2)] = 'Classic';
+styles.splice(styles.length / 2, 1, 'Classic');
+
+console.log(styles.shift());
+
+styles.unshift('Rap', 'Raggy');
+
+console.log(styles);
