@@ -22,11 +22,21 @@ const account = {
   // История транзакций
   transactions: [],
 
+  counter: 0,
+
   /*
    * Метод создает и возвращает объект транзакции.
    * Принимает сумму и тип транзакции.
    */
-  createTransaction(amount, type) {},
+  createTransaction(amount, type) {
+    this.counter++;
+
+    return {
+      id: this.counter,
+      amount,
+      type,
+    };
+  },
 
   /*
    * Метод отвечающий за добавление суммы к балансу.
@@ -34,7 +44,11 @@ const account = {
    * Вызывает createTransaction для создания объекта транзакции
    * после чего добавляет его в историю транзакций
    */
-  deposit(amount) {},
+  deposit(amount) {
+    const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+    this.balance += amount;
+    this.transactions.push(transaction);
+  },
 
   /*
    * Метод отвечающий за снятие суммы с баланса.
@@ -45,23 +59,46 @@ const account = {
    * Если amount больше чем текущий баланс, выводи сообщение
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
-  withdraw(amount) {},
+  withdraw(amount) {
+    const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+    this.balance -= amount;
+    this.transactions.push(transaction);
+  },
 
   /*
    * Метод возвращает текущий баланс
    */
-  getBalance() {},
+  getBalance() {
+    return this.balance;
+  },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    console.log("transaction didn't found");
+    for (let transaction of this.transactions) {
+      if (transaction.id === id) return transaction;
+    }
   },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {
+    let total = 0;
+    for (let transaction of this.transactions) {
+      if (transaction.type === type) total += transaction.amount;
+    }
+
+    return total;
+  },
 };
+
+account.deposit(1000);
+account.withdraw(500);
+account.deposit(200);
+account.deposit(700);
+console.log(account.getBalance());
+console.log(account.getTransactionDetails(1));
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));

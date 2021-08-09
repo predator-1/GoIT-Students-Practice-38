@@ -12,3 +12,19 @@ const user = {
   hobby: 'html',
   premium: true,
 };
+
+user.mood = 'happy';
+
+user.hobby = 'skydiving';
+
+user.premium = !user.premium;
+
+user.doAction = () => {
+  return '123';
+};
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+console.log(Object.entries(user));
+
+console.log(user);

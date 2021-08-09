@@ -9,12 +9,28 @@ const stones = [
   { name: 'Crushed stone', price: 200, quantity: 2 }, // Щебень
 ];
 
+const calcTotalPrice = (stones, stoneName) => {
+  if (!stones || (stones && !stones.length)) return 0;
+
+  if (!stoneName) return 0;
+
+  for (let stone of stones) {
+    if (stone.name === stoneName) {
+      return stone.quantity * stone.price;
+    }
+  }
+
+  return 0;
+};
+
 console.log(calcTotalPrice(stones, 'Diamond'));
 console.log(calcTotalPrice(stones, 'Crushed stone'));
 console.log(calcTotalPrice(stones, 'Emerald'));
 console.log(calcTotalPrice(stones, 'Sapphire'));
 console.log(calcTotalPrice(null, 'Sapphire'));
-
+console.log(calcTotalPrice([], 'Sapphire'));
+console.log(calcTotalPrice(stones, ''));
+console.log(calcTotalPrice(stones, 'www'));
 /*
 *
 *
