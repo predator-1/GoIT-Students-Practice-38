@@ -5,7 +5,10 @@
  * итерации отадала 3
  */
 
-function addFactory() {}
+function addFactory() {
+  let counter = 0;
+  return () => ++counter;
+}
 
 const add = addFactory();
 

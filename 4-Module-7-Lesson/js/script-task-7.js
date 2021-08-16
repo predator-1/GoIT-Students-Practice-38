@@ -1,18 +1,22 @@
-const person = {
-  fullname() {
-    return `${this.firstName} ${this.lastName}`;
-  },
+'use strict';
+
+const fullname = function () {
+  return `${this.firstname} ${this.lastname}`;
 };
 
-const personFactory = (firstName, lastName) => {
-  return {
-    firstName,
-    lastName,
-  };
-};
+const personFactory = (firstname, lastname) => ({
+  firstname,
+  lastname,
+});
 
 const person1 = personFactory('Ivan', 'Ivanov');
 const person2 = personFactory('Maria', 'Ivanova');
 
-console.log(person.fullname.call(person1));
-console.log(person.fullname.call(person2));
+person1.fullname = fullname;
+person2.fullname = fullname;
+
+console.log(person1.fullname());
+console.log(person2.fullname());
+
+const person1Fullname = () => person1.fullname();
+console.log(person1Fullname());

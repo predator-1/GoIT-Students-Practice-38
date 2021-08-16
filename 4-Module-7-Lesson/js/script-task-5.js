@@ -3,15 +3,33 @@
  * Fix errors
  */
 
+//  manufactured: {
+//   country: 'China',
+//   showCountry() {
+//     console.log(this.country);
+//   },
+// },
+
 const product = {
   price: 5000,
+
+  manufactured: {
+    country: 'China',
+    showCountry() {
+      console.log(this.country);
+    },
+  },
   showPrice() {
-    console.log(price);
+    console.log(this.price);
   },
 };
 
-function callAction(action) {
-  action();
-}
+// function callAction(action) {
+//   action();
+// }
 
-callAction(product.showPrice);
+// callAction(() => product.showPrice());
+// const action = product.showPrice;
+// action();
+
+product.manufactured.showCountry();
