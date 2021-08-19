@@ -7,3 +7,17 @@
  *
  * Выведите результат в консоль
  */
+
+const counter = function () {
+  return (this.i += 1);
+};
+
+const context = { i: 0 };
+
+const counter1 = counter.bind(context);
+
+console.log(counter1());
+console.log(counter1());
+context.i = 200;
+
+console.log(counter1());

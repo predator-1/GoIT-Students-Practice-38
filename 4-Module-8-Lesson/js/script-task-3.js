@@ -7,6 +7,7 @@
 function test() {
   console.log(this);
   return () => {
+    'use strict';
     console.log(this);
   };
 }

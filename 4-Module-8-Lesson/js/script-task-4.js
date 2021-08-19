@@ -5,10 +5,9 @@
 const myself = {
   myName: 'Anna',
   myNickNames: ['Kitty', 'Dorsy'],
-  printMyNickNames: () => {
-    'use strict';
+  printMyNickNames() {
     for (const nickName of this.myNickNames) {
-      const print = function (nick) {
+      const print = nick => {
         console.log(this.myName + ' is also known as ' + nick);
       };
       print(nickName);
