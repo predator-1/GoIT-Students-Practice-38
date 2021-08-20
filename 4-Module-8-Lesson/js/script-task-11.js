@@ -1,6 +1,6 @@
 /**
- * http://fecore.net.ua/books/m5ph3r-javascript/module-02/scope.html
- * http://fecore.net.ua/books/m5ph3r-javascript/module-04/closures.html
+ * https://goit.global/javascript/ru/v1/module-02/scope.html
+ * https://goit.global/javascript/ru/v1/module-04/closures.html
  * Измените анонимную функцию которая присваивается к result[i]
  * так, чтобы в результате в консоли мы послучили числа от 0 до 4 включительно
  * Изменять можно только функцию 
