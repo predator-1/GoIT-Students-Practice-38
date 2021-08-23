@@ -4,3 +4,18 @@
  * Отнаследуйтесь от animal и измените voice.
  * Выведете результат getVoice всех объектов.
  */
+
+const animal = {
+  voice: 'none',
+  getVoice() {
+    console.log(this.voice);
+  },
+};
+
+const cat = Object.create(animal);
+// const cat = Object.assign({}, animal);
+// const cat = { ...animal };
+cat.voice = 'meow';
+
+animal.getVoice();
+cat.getVoice();
