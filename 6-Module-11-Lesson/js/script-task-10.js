@@ -55,7 +55,7 @@ class Notes {
   // return sorted notes
   // high first
   get notes() {
-    return this.#notes;
+    return this.#notes.sort((a, b) => b.priority - a.priority);
   }
 }
 
@@ -66,6 +66,6 @@ const note3 = new Note('third', PRIORITY.LOW);
 const notes = new Notes();
 notes.addNote(note1, note2, note3);
 //notes.removeNote('second');
-notes.updateNotePriority('second', PRIORITY.LOW);
+//notes.updateNotePriority('second', PRIORITY.LOW);
 
 console.log(notes.notes);

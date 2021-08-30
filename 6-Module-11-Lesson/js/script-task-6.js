@@ -38,3 +38,14 @@ const courses = [
     ],
   },
 ];
+
+const allTopics = courses.flatMap(item => item.topics);
+
+console.log(allTopics);
+const unique = arr => {
+  return arr.filter(
+    (current, index, array) => array.indexOf(current) === index,
+  );
+};
+
+console.log(unique(allTopics));
