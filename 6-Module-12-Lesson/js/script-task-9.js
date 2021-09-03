@@ -14,7 +14,14 @@ const products = [
   { name: 'Apple', price: 1400 },
 ];
 
-const getAllPropValues = propName => {};
+const getAllPropValues = propName => {
+  return products.reduce((acc, product) => {
+    if (product.hasOwnProperty(propName)) {
+      acc.push(product[propName]);
+    }
+    return acc;
+  }, []);
+};
 
 console.log(getAllPropValues('name')); // ['Asus', 'Huawei', 'HP', 'Dell', 'Apple']
 console.log(getAllPropValues('quantity')); // [4, 3, 7, 9]

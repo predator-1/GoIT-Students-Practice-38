@@ -1,9 +1,9 @@
 const PRIORITY = {
-  SUPER_HIGH: 'Super High',
-  HIGH: 'High',
-  NORMAL: 'Normal',
-  LOW: 'Low',
-  BACKLOG: 'Backlog',
+  SUPER_HIGH: 'Super High', // 0
+  HIGH: 'High', //1
+  NORMAL: 'Normal', //2
+  LOW: 'Low', //3
+  BACKLOG: 'Backlog', //4
 };
 
 const array = [
@@ -109,4 +109,21 @@ const array = [
   { id: 32, text: 'This is High', priority: 'High' },
 ];
 
-const sortTasks = tasks => {};
+const sortTasks = tasks => {
+  const priorities = Object.values(PRIORITY);
+  return [...tasks].sort((task1, task2) => {
+    const task1Pr = priorities.indexOf(task1.priority);
+    const task2Pr = priorities.indexOf(task2.priority);
+    if (task1Pr < task2Pr) return -1;
+
+    if (task1Pr === task2Pr) return task1.id - task2.id;
+
+    return 1;
+  });
+};
+
+const sorted = sortTasks(array);
+// sorted[0].text = '!!!!!!!!!!!!';
+console.table(sorted);
+console.table('--------------------');
+console.table(array);

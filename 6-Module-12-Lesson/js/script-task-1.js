@@ -13,3 +13,14 @@ const phones = [
   { name: 'Samsung', price: 1000 },
   { name: 'Huawei', price: 650 },
 ];
+
+const removeDublicates = items => {
+  return [...items]
+    .sort((a, b) => a.price - b.price)
+    .filter(
+      (item, index, array) =>
+        index === array.findIndex(a => a.name === item.name),
+    );
+};
+
+console.table(removeDublicates(phones));

@@ -14,3 +14,20 @@ const phones = [
   { name: 'Samsung', price: 1000 },
   { name: 'Huawei', price: 650 },
 ];
+
+console.log('min', [...phones].sort((a, b) => a.price - b.price)[0]);
+console.log('max', [...phones].sort((a, b) => b.price - a.price)[0]);
+
+console.log(
+  'min',
+  phones.reduce((acc, item) => {
+    return acc.price > item.price ? item : acc;
+  }),
+);
+
+console.log(
+  'max',
+  phones.reduce((acc, item) => {
+    return acc.price < item.price ? item : acc;
+  }),
+);
