@@ -10,15 +10,20 @@
 ];
 
 const ol = document.createElement('ol');
-for(const image of images) {
+
+/**
+ * <ol>
+ *   <li><img src=....
+ */
+
+ images.forEach(image => {
     const li = document.createElement('li');
     const imageTag = document.createElement('img');
-    ol.appendChild(li);
+    
     li.appendChild(imageTag);
+    ol.appendChild(li);
 
-
-    imageTag.setAttribute('alt', 'random image');
     imageTag.src = image;
-}
+ });
 
-document.body.appendChild(ol);
+ document.body.appendChild(ol);
