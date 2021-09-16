@@ -1,6 +1,6 @@
 ## 7 Модуль 14 Занятие
 
-19.30 продолжим.
+8.29 продолжим.
 
 ### План занятия
 
@@ -18,6 +18,8 @@
 - click, input, submit, keyboard events
 
 ### Вопросы
+
+- https://learn.javascript.ru/script-async-defer
 
 ### Разбор задач
 
