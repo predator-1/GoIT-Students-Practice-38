@@ -1,8 +1,8 @@
 {
-  "name": "goit-students-practice-10-20",
+  "name": "goit-students-practice-QnA-7-10",
   "version": "1.0.0",
   "description": "GoIT Students Practice QnA 7-10",
-  "main": "src/task1/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "webpack serve --env mode=development",
     "build": "webpack --env mode=production"

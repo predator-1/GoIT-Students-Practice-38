@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Status</th>
+  </tr>
+  {{#each users}}
+    <tr>
+      <td>{{firstname}}</td>
+      <td>{{lastname}}</td>
+      <td>
+        <select id='select-{{id}}' value={{status}}>
+          {{#each @root.options}}
+            <option value='{{this}}'>{{this}}</option>
+          {{/each}}
+        </select>
+      </td>
+      {{!-- <td>{{this.status}}</td> --}}
+    </tr>
+  {{/each}}
+</table>
