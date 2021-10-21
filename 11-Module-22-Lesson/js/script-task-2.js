@@ -4,7 +4,7 @@
  */
 
 const getNewPromise = n => {
-    return new Promise(resolve => setTimeout(() => resolve(n*n), 1000))
+    return new Promise(resolve => setTimeout(() => resolve(n*n), 1000));
 }
 
 Promise.resolve(3)
@@ -12,6 +12,6 @@ Promise.resolve(3)
     .then(getNewPromise)
     .then(getNewPromise)
     .then(value => `this is ${value}`)
-    .then(console.log);
+    .then(console.log)
 
 console.log('promise created');
