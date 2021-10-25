@@ -1,50 +1,40 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export const getNotes = () => {
-  return new Promise((res, rej) => {
-    $.get('api/notes', data => {
-      res(data);
-    }).fail(resp => rej(resp));
-  });
+  return fetch('api/notes').then(response => response.json());
+  //   return new Promise((res, rej) => {
+  //     $.get('api/notes', data => {
+  //       res(data);
+  //     }).fail(resp => rej(resp));
+  //   });
 };
 
-export const getNote = ({ id }) => {
-  return new Promise((res, rej) => {
-    $.get('api/notes/' + id, data => {
-      res(data);
-    }).fail(resp => rej(resp));
-  });
+export const getNote = id => {
+  return fetch(`api/notes/${id}`).then(response => response.json());
 };
 
-export const addNote = ({ text }) => {
-  return new Promise((res, rej) => {
-    $.post('api/notes', { text }, data => {
-      res(data);
-    }).fail(resp => rej(resp));
-  });
+export const addNote = text => {
+  return fetch('api/notes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'Application/json',
+    },
+    body: JSON.stringify({ text }),
+  }).then(response => response.json());
 };
 
-export const updateNote = ({ text, id }) => {
-  return new Promise((res, rej) => {
-    $.ajax({
-      dataType: 'json',
-      url: 'api/notes/' + id,
-      data: { text },
-      method: 'PUT',
-      success: data => res(data),
-      error: resp => rej(resp),
-    });
-  });
+export const updateNote = ({ id, text }) => {
+  return fetch(`api/notes/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'Application/json',
+    },
+    body: JSON.stringify({ text }), // "{"text": "...."}"
+  }).then(response => response.json());
 };
 
-export const deleteNote = ({ text, id }) => {
-  return new Promise((res, rej) => {
-    $.ajax({
-      // dataType: 'json',
-      url: 'api/notes/' + id,
-      method: 'DELETE',
-      success: data => res(data),
-      error: resp => rej(resp),
-    });
-  });
+export const deleteNote = id => {
+  return fetch(`api/notes/${id}`, {
+    method: 'DELETE',
+  }).then(response => response.ok);
 };

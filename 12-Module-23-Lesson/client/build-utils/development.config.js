@@ -9,6 +9,17 @@ module.exports = env => ({
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
@@ -16,7 +27,7 @@ module.exports = env => ({
     contentBase: path.join(__dirname, 'src/task2'),
     // historyApiFallback: true,
     // compress: true,
-    // localhost:4040/api/notes -> localhost:3002/notes
+    // localhost:4040/api/notes <-> localhost:3002/notes
     port: 4040,
     proxy: {
       '/api': {
