@@ -24,4 +24,6 @@ app.get('/cat', function (req, response) {
 
 app.listen(3002);
 
+console.log('http://localhost:3002');
+
 module.exports = app;
