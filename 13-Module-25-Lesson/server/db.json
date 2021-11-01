@@ -1,0 +1,28 @@
+{
+  "ppl": [
+    {
+      "name": "Peter",
+      "age": 20,
+      "id": 2,
+      "userId": 1
+    },
+    {
+      "name": "Ann",
+      "age": 25,
+      "id": 3,
+      "userId": 1
+    },
+    {
+      "name": "Alis",
+      "age": 22,
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "abc@gmail.com",
+      "password": "$2a$10$HX7P8qw7zsL5nLwNXqRqS.Kv0JM3JjGs01BJA5/WftcpEkKCdtwbq",
+      "id": 1
+    }
+  ]
+}
