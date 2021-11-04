@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "value": "qwfqwf",
+      "id": 1
+    },
+    {
+      "value": "wqfqqwfqwf",
+      "id": 2
+    },
+    {
+      "value": "qfqwfqwf",
+      "id": 3
+    },
+    {
+      "value": "qwdqwd",
+      "id": 4
+    },
+    {
+      "value": "cwqcwq",
+      "id": 5
+    },
+    {
+      "value": "wqdqwd",
+      "id": 6
+    },
+    {
+      "value": "fqwfwqf",
+      "id": 7
+    },
+    {
+      "value": "cascasc",
+      "id": 8
+    },
+    {
+      "value": "124124",
+      "id": 9
+    },
+    {
+      "value": "fwefwef",
+      "id": 10
+    },
+    {
+      "value": "3224t23t23",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$w4rmbj/p4st9cmb0Enq/sO3tR9H4vYIAnAeoI.YNBdBeGXY8ZfaBK",
+      "id": 1
+    }
+  ]
+}
